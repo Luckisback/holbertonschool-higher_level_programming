@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-for i in range(1, 90):
-    if i == 89:
-        print("{:02}".format(i), end="\n")
-        break
-    elif i in [10, 11, 20, 21, 22, 30, 31, 32, 33, 40, 41, 42, 43, 44, 50,
-               51, 52, 43, 53, 54, 55, 60, 61, 62, 63, 64, 65, 66, 70, 71,
-               72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 88]:
-        continue
-    print("{:02}".format(i), end=", ")
+for dizaine in range(0, 10):
+    for unité in range(dizaine + 1, 10):
+        if dizaine == 8 and unité == 9:
+            print("{}{}".format(dizaine, unité), end="")
+            print("{}".format('\n'))
+        else:
+            print("{}{}".format(dizaine, unité), end=", ")
