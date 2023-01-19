@@ -18,12 +18,11 @@ if __name__ == "__main__":
         a = int(argv[1])
         b = int(argv[3])
 
-    match oper:
-        case "+":
-            print("{} {} {} = {}".format(a, oper, b, add(a, b)))
-        case "-":
-            print("{} {} {} = {}".format(a, oper, b, sub(a, b)))
-        case "*":
-            print("{} {} {} = {}".format(a, oper, b, mul(a, b)))
-        case "/":
-            print("{} {} {} = {}".format(a, oper, b, div(a, b)))
+    if oper == "+":
+        print("{} {} {} = {}".format(a, oper, b, add(a, b)))
+    elif oper == "-":
+        print("{} {} {} = {}".format(a, oper, b, sub(a, b)))
+    elif oper == "*":
+        print("{} {} {} = {}".format(a, oper, b, mul(a, b)))
+    elif oper == "/":
+        print("{} {} {} = {}".format(a, oper, b, div(a, b)))
