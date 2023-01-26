@@ -4,8 +4,8 @@ def multiple_returns(sentence):
     fchar = sentence[0]
     if sentence is None
         return
-    elif sentence = "":
-        return
+    elif sentence = ""
+        fchar = None
     else:
         tpl = (lg, fchar)
     return tpl
