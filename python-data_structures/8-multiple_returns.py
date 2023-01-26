@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
     lg = len(sentence)
-    fchar = sentence[0]
-
     if sentence == "":
         fchar = None
     else:
+        fchar = sentence[0]
         tpl = (lg, fchar)
     return tpl
