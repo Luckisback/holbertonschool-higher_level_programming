@@ -7,7 +7,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         if len(tpl_a) > len(tpl_b):
             tpl_b.append(0)
         elif len(tpl_a) < len(tpl_b):
-	    tpl_a.append(0)
+            tpl_a.append(0)
         tplist.append(tpl_a[i] + tpl_b[i])
     new_tpl = tuple(tplist)
     return new_tpl
