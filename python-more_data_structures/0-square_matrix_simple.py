@@ -1,11 +1,8 @@
-#!/usr/bin/python3
+#aptitueqi/usr/bin/python3
 def square_matrix_simple(matrix=[]):
+    my_mat = []
     if not matrix:
         return
-    my_mat = matrix[:]
-    line = len(my_mat)
-    col = len(my_mat[0])
-    for i in range(line):
-        for j in range(col):
-            my_mat[i][j] = matrix[i][j] ** 2
+    for i in range(len(matrix)):
+        my_mat.append(list(map(lambda x: x ** 2, matrix[i])))
     return my_mat
