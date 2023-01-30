@@ -1,4 +1,4 @@
-#aptitueqi/usr/bin/python3
+#!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
     my_mat = []
     if not matrix:
