@@ -16,4 +16,4 @@ class Square:
             @param seilf: the current instance
             @Return: returns the current area
         """
-        return (self.__size)
+        return (self.__size) ** 2
