@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
 		 'C': 100, 'D': 500,
 		 'M': 1000}
     result = 0
-    if (type(roman_string) == not str) or roman_string == None:
+    if (type(roman_string) != str) or roman_string is None:
         return 0
     for i in range(len(roman_string)):
         curr = roman_map[roman_string[i]]
