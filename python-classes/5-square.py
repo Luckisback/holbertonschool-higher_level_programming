@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ Création of a class called Square """
 
