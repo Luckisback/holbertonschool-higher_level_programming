@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Declaration of a class"""
+
+
 class Square:
     """Definition of the class Square"""
     def __init__(self, size: int = 0):
@@ -8,7 +10,6 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-
 
     def area(self):
         """ Definition of a public instance methode
