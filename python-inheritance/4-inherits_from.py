@@ -4,7 +4,7 @@
 
 def inherits_from(obj, a_class):
     """ A function that find the kind of type the class """
-    if issubclass(obj, a_class) and isinstance(obj, a_class):
+    if not type(obj) == a_class and isinstance(obj, a_class):
         return True
     else:
         return False
