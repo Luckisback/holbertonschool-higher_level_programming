@@ -10,8 +10,8 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         if ((width > 0 and height > 0) and
             (type(width) is int and type(height) is int)):
-            self.__width = width
-            self.__height = height
+           self.__width = width
+           self.__height = height
         elif type(width) is str:
             raise TypeError("width must be an integer")
         elif type(height) is str:
