@@ -4,5 +4,5 @@
 
 def is_kind_of_class(obj, a_class):
     """ the function is_kind_of_class """
-    return (True if type(obj) is a_class
-            or isinstance(obj, a_class) else False)
+    return (True if type(obj) is a_class or
+            isinstance(obj, a_class) else False)
