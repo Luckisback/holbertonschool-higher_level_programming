@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """ Import of the class parent """
 from models.base import Base
 
