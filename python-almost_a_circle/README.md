@@ -71,6 +71,15 @@
 ### `Resources`   :earth_africa:
 
 
+    args/kwargs : https://intranet.hbtn.io/rltoken/1VFpovKWOxo91RtP2lebZg
+    JSON encoder and decoder : https://intranet.hbtn.io/rltoken/DfJsuOTXTv2t7ycPfEXZuw
+    unittest module : https://intranet.hbtn.io/rltoken/_jqAzT_nImg88Bk36NHjMw
+    Python test cheatsheet : https://intranet.hbtn.io/rltoken/n7aJtd_G82AIQ9hxMg7nng
+
+
+
+
+
 	# :spider_web::fist_raised:
 
 ```
