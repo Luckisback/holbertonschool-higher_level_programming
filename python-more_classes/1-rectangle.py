@@ -1,36 +1,48 @@
 #!/usr/bin/python3
-""" Creation of a class Rectangle that defines a
-    rectangle by: (based on 0-rectangle.py)
+"""
+    Creation of the class rectangle based on 0-rectangle.py"
 """
 
 
 class Rectangle:
-    """Definition de Rectangle"""
+    """ Definition of Rectangle"""
+
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        """ Initialize a new instance """
+
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
+        """ get the width proprety """
+
         return self.__width
 
     @width.setter
     def width(self, value):
-        """managment of the property width"""
-        if not isinstance(value, int):
+        """ Set the width proprety """
+
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
+
         self.__width = value
 
     @property
     def height(self):
+        """ get the height proprety """
+
         return self.__height
 
+    @height.setter
     def height(self, value):
-        """managment of the property Hight"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+        """ Set the height proprety """
+
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
-            self.__height = value
+            raise ValueError("height must be >= 0")
+
+        self.__height = value
