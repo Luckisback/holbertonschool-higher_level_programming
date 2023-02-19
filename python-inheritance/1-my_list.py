@@ -2,7 +2,6 @@
 """ Declaration of class that inherits from a list"""
 
 
-
 class MyList(list):
     """Created class inherits list"""
 
