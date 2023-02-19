@@ -6,7 +6,7 @@
 
 class Rectangle:
     """
-        Declaration of the Class rectangle 
+        Declaration of the Class rectangle
     """
 
     number_of_instances = 0
