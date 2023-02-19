@@ -5,7 +5,8 @@
 import json
 
 
-def from_json_string(my_str):
+def from_json_string(json_str):
     """Write a function that returns an object"""
-
-    return json.loads(my_str)
+      with open(json_str) as f:
+        data = json.load(f)
+    return data
