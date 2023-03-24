@@ -1,12 +1,5 @@
 -- A script that creates a table: second_table
-CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
-USE hbtn_0c_0;
-
-CREATE TABLE IF NOT EXISTS second_table (
-    id INT,
-    name VARCHAR(256),
-    score INT
-);
+CREATE TABLE IF NOT EXISTS second_table (id int, name VARCHAR(256), score int);
 INSERT INTO second_table (id, name, score) VALUES (1, "john", 10);
 INSERT INTO second_table (id, name, score) VALUES (2, "Alex", 3);
 INSERT INTO second_table (id, name, score) VALUES (3, "Bob", 14);
