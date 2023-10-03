@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-def printer(a):
-    a = "#pythoniscool"
-	print(a)
+def printer():
+    print("#pythoniscool")
