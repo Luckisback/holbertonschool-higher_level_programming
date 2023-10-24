@@ -32,17 +32,19 @@ class Rectangle(Base):
         __x = x
         __y = y
 
-
 """Stting of the behavior of the Rectangle instance attribute"""
 
 @property
 def width(self):
     """ definition of width as an object property"""
-    
     return self.__width
 
 @width.setter
 def width(self, value):
     """ definition of, How width should act"""
-
+    
+    if not isinstance(value, int):
+        raise ValueError("width must be an integer")
+    if value <= 0:
+        raise ValueError("width must be greater than 0")
     self.__width = value
