@@ -3,16 +3,14 @@
 Base Class
 
 Args:
-
     Base: First class
     __nb_objects: the private class attribut
-    id: A public instance attribut
-
-return: 
-    description de ce qui est retourné    
+    id: A public instance attribut    
 """
 
 class Base:
+    """ The first class called base """
+
     __nb_objects = 0
     def __init__(self, id=None):
         if id is not None:
