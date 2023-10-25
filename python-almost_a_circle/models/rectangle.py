@@ -112,4 +112,4 @@ class Rectangle(Base):
      #   """ this method return a particular display: [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         #return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self._Rectangle__x, self._Rectangle__y, self._Rectangle__width, self._Rectangle__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
