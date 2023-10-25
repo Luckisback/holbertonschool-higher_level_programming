@@ -107,9 +107,6 @@ class Rectangle(Base):
             print("")
             
     #Adding of the method __str__ for a specific display
-        
-   # def __str__(self):
-     #   """ this method return a particular display: [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        #return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
