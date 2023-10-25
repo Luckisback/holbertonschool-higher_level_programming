@@ -30,8 +30,8 @@ class Rectangle(Base):
 
         self.__width = width
         self.__height = height
-        __x = x
-        __y = y
+        self.__x = x
+        self.__y = y
 
 # Setting of the Rectangle's instance attribute behaviors
 
@@ -108,6 +108,8 @@ class Rectangle(Base):
             
     #Adding of the method __str__ for a specific display
         
+   # def __str__(self):
+     #   """ this method return a particular display: [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        #return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
     def __str__(self):
-        """ this method return a particular display: [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self._Rectangle__x, self._Rectangle__y, self._Rectangle__width, self._Rectangle__height)
