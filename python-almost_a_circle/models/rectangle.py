@@ -94,14 +94,20 @@ class Rectangle(Base):
     #Adding of the public method area
     
     def area(self):
-        """The method that returns the area  avlue of Rectangle"""
+        """The method that returns the area  value of Rectangle"""
         return self.__width * self.height
     
     #Adding of the public method display
     
     def display(self):
         """ The methode that print '#' carracter corresponding to value of width and height"""
+        #seconde time: taking care of 'x' and 'y' before printing
+        absices = self.__x * " "
+        ordonnés = self.__y
+        for i in range(ordonnés):
+            print('')
         for i in range(self.height):
+            print("{}".format(absices), end="")
             for i in range(self.width):
                 print("{}".format("#"), end='')
             print("")
