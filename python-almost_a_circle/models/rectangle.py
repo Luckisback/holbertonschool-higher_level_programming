@@ -36,7 +36,7 @@ class Rectangle(Base):
 
 @property
 def width(self):
-    """ definition of width as an object property"""
+    """ definition of width as an object's property"""
     return self.__width
 
 @width.setter
@@ -44,7 +44,52 @@ def width(self, value):
     """ definition of, How width should act"""
     
     if not isinstance(value, int):
-        raise ValueError("width must be an integer")
+        raise TypeError("width must be an integer")
     if value <= 0:
-        raise ValueError("width must be greater than 0")
+        raise ValueError("width must be > 0")
     self.__width = value
+    
+@property
+def height(self):
+    """ definition of height as an object's property"""
+    return self.__height
+
+@height.setter
+def height(self, value):
+    """ definition of, How height should act"""
+    
+    if not isinstance(value, int):
+        raise TypeError("height must be an integer")
+    if value <= 0:
+        raise ValueError("height must be > 0")
+    self.__height = value
+    
+@property
+def x(self):
+    """ definition of x as an object's property"""
+    return self.__x
+
+@x.setter
+def x(self, value):
+    """ definition of, How x should act"""
+    
+    if not isinstance(value, int):
+        raise TypeError("x must be an integer")
+    if value <= 0:
+        raise ValueError("x must be >= 0")
+    self.__x = value
+    
+@property
+def y(self):
+    """ definition of y as an object's property"""
+    return self.__y
+
+@y.setter
+def y(self, value):
+    """ definition of, How y should act"""
+    
+    if not isinstance(value, int):
+        raise TypeError("y must be an integer")
+    if value <= 0:
+        raise ValueError("y must be >= 0")
+    self.__y = value
