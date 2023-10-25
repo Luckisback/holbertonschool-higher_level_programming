@@ -32,64 +32,60 @@ class Rectangle(Base):
         __x = x
         __y = y
 
-"""Stting of the behavior of the Rectangle instance attribute"""
+# Stting of the behavior of the Rectangle instance attribute
 
-@property
-def width(self):
     """ definition of width as an object's property"""
-    return self.__width
+    @property
+    def width(self):
+        return self.__width
 
-@width.setter
-def width(self, value):
     """ definition of, How width should act"""
-    
-    if not isinstance(value, int):
-        raise TypeError("width must be an integer")
-    if value <= 0:
-        raise ValueError("width must be > 0")
-    self.__width = value
-    
-@property
-def height(self):
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        
     """ definition of height as an object's property"""
-    return self.__height
-
-@height.setter
-def height(self, value):
+    @property
+    def height(self):
+        return self.__height
+    
     """ definition of, How height should act"""
-    
-    if not isinstance(value, int):
-        raise TypeError("height must be an integer")
-    if value <= 0:
-        raise ValueError("height must be > 0")
-    self.__height = value
-    
-@property
-def x(self):
-    """ definition of x as an object's property"""
-    return self.__x
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
+        
+    """ definition of 'x' as an object's property"""
+    @property
+    def x(self):
+        return self.__x
 
-@x.setter
-def x(self, value):
-    """ definition of, How x should act"""
+    """ definition of, How 'x' should act"""
+    @x.setter
+    def x(self, value):
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
     
-    if not isinstance(value, int):
-        raise TypeError("x must be an integer")
-    if value < 0:
-        raise ValueError("x must be >= 0")
-    self.__x = value
-    
-@property
-def y(self):
-    """ definition of y as an object's property"""
-    return self.__y
+    """ definition of 'y' as an object's property"""
+    @property
+    def y(self):
+        return self.__y
 
-@y.setter
-def y(self, value):
-    """ definition of, How y should act"""
-    
-    if not isinstance(value, int):
-        raise TypeError("y must be an integer")
-    if value < 0:
-        raise ValueError("y must be >= 0")
-    self.__y = value
+    """ definition of, How 'y' should act"""
+    @y.setter
+    def y(self, value):
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
