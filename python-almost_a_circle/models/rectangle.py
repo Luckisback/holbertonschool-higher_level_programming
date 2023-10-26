@@ -8,7 +8,8 @@ Args:
     id: A public instance attribut
     Rectangle: A classe inherite the classe Base
     __width, __height, __x, __y: Private instance attribute of Rectangle 
-    area: Public methode that returns the   rea value of the rectangle  
+    area: Public methode that returns the   rea value of the rectangle
+    update: The method that assigns an argument to each attribute
 """
 
 class Base:
@@ -116,3 +117,21 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    """Updating of the class Rectangle, by the adding of the method update"""
+    
+    def update(self, *args):
+        """The method that assigns an argument to each attribute"""
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.__width = args[1]
+            if len(args) >= 3:
+                self.__height = args[2]
+            if len(args) >= 4:
+                self.__x = args[3]
+            if len(args) >= 5:
+                self.__y = args[4]
+            
+        
