@@ -1,31 +1,34 @@
 #!/usr/bin/python3
-""" 
+"""
 Base Class
-
 Args:
     Base: First class
     __nb_objects: the private class attribut
     id: A public instance attribut
     Rectangle: A classe inherite the classe Base
-    __width, __height, __x, __y: Private instance attribute of Rectangle 
+    __width, __height, __x, __y: Private instance attribute of Rectangle
     area: Public methode that returns the   rea value of the rectangle
     update: The method that assigns an argument to each attribute
 """
+
 
 class Base:
     """ The first class called base """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
+
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+
 class Rectangle(Base):
     """ A classe inherite Base"""
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
 
@@ -35,7 +38,6 @@ class Rectangle(Base):
         self.__y = y
 
 # Setting of the Rectangle's instance attribute behaviors
-
     @property
     def width(self):
         """ definition of width as an object's property"""
@@ -49,12 +51,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        
+
     @property
     def height(self):
         """ definition of height as an object's property"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """ definition of, How height should act"""
@@ -63,7 +65,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-        
+
     @property
     def x(self):
         """ definition of 'x' as an object's property"""
@@ -77,7 +79,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-    
+
     @property
     def y(self):
         """ definition of 'y' as an object's property"""
@@ -91,18 +93,16 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-        
-    #Adding of the public method area
-    
+
+    """Adding of the public method area"""
     def area(self):
         """The method that returns the area  value of Rectangle"""
         return self.__width * self.height
-    
-    #Adding of the public method display
-    
+
+    """Adding of the public method display"""
     def display(self):
-        """ The methode that print '#' carracter corresponding to value of width and height"""
-        #seconde time: taking care of 'x' and 'y' before printing
+        """ Printing '#' carracters => value of width and height"""
+        """seconde time: taking care of 'x' and 'y' before printing"""
         absices = self.__x * " "
         ordonnés = self.__y
         for i in range(ordonnés):
@@ -112,14 +112,17 @@ class Rectangle(Base):
             for i in range(self.width):
                 print("{}".format("#"), end='')
             print("")
-            
-    #Adding of the method __str__ for a specific display
 
+    """Adding of the method __str__ for a specific display"""
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     """Updating of the class Rectangle, by the adding of the method update"""
-    
+
     def update(self, *args):
         """The method that assigns an argument to each attribute"""
         if args:
@@ -133,5 +136,3 @@ class Rectangle(Base):
                 self.__x = args[3]
             if len(args) >= 5:
                 self.__y = args[4]
-            
-        
