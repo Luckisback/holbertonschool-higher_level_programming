@@ -24,7 +24,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """The method the return"""
-        return "[Square] ({}) {}/{} - {}".format(id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y, self.size)
 
     @property
     def size(self):
@@ -34,3 +35,37 @@ class Square(Rectangle):
     def size(self, size):
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """That assigns an argument to each attribute"""
+        if args:
+            for i, v in enumerate(args):
+                if i == 0:
+                    self.id = v
+                if i == 1:
+                    self.size = v
+                if i == 2:
+                    self.x = v
+                if i == 3:
+                    self.y = v
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Square
+        """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
