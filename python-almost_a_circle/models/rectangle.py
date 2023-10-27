@@ -150,4 +150,3 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == 'y':
                     self.__y = value
-
