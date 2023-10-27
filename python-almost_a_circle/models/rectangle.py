@@ -124,7 +124,7 @@ class Rectangle(Base):
 
     """Updating of the class Rectangle, by the adding of the method update"""
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """The method that assigns an argument to each attribute"""
         """Seonde time, update the code by adding **kargs parameter"""
         if args:
