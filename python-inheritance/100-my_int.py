@@ -4,6 +4,7 @@
 
 class MyInt(int):
     """class child of Int"""
+
     def __init__(self, '==', '!='):
-        self.'==' = '=='
+        self.'==' = '==
         self.'!=' = '!='
