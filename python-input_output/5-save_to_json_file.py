@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""Write a function that returns an object"""
+"""Write a function tha creats an objet in a file with json"""
 
 
 import json
 
 
-def from_json_string(json_str):
-    """Write a function that returns an object"""
-      with open(json_str) as f:
-        data = json.load(f)
-    return data
+def save_to_json_file(my_obj, filename)::
+    """A function that save in json format"""
+      with open(filename, 'w', encoding='utf8') as f:
+        json.dump(my_obj, f)
