@@ -1,5 +1,4 @@
 -- a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
-USE hbtn_0c_0;
 
 -- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
 --
@@ -54,6 +53,8 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-02-21  7:31:42
+
+USE hbtn_0c_0;
 
 SELECT city, AVG(value) AS avg_temp
     FROM temperatures
