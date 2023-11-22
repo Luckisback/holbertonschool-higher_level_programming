@@ -1,8 +1,7 @@
 -- importing the database hbtn_0d_tvshows
 -- source = /holbertonschool-higher_level_programming/
 -- SQL_more_queries/hbtn_0d_tvshows.sql;
-
---  A script that lists all shows contained in hbtn_0d_tvshows
+-- A script that lists all shows contained in hbtn_0d_tvshows
 -- that have at least one genre linked
 
 USE hbtn_0d_tvshows;
