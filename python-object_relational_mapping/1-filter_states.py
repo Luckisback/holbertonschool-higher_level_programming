@@ -16,7 +16,8 @@ if __name__ == "__main__":
     con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
     cur = con.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY states.id")
+    req = "SELECT * FROM states ORDER BY states.id")
+    cur.execute(req)
 
     result = cur.fetchall()
 
