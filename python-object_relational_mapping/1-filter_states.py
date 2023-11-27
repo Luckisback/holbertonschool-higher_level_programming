@@ -15,14 +15,14 @@ if __name__ == "__main__":
                                  database=db, host="localhost",
                                  port=3306)
 
-    cur = connection.cursor()
+    cur = con.cursor()
     req = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
     cur.execute(req)
 
     res_tup = cur.fetchall()
 
-    for eta in stateList:
+    for eta in res_tup:
         print(eta)
 
     cursor.close()
-    connection.close()
+    con.close()
