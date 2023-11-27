@@ -6,15 +6,8 @@ import MySQLdb
 
 if __name__ == "__main__":
 
-    """ Delaration of connection's parameters """
-    h = "localhost"
-    u = "root"
-    pwd = ""
-    db = "hbtn_0e_0_usa"
-    p = 3306
-
     """connection to the dabtabase """
-    con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
+    con = MySQLdb.connect(host=localhost, port=3306, user="root", password="", database="hbtn_0e_0_usa")
     cur = con.cursor()
 
     """ The query for retieving information from the table """
