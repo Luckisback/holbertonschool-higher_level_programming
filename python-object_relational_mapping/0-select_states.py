@@ -3,14 +3,15 @@
 """ A script that lists all states from database """
 
 import MySQLdb
+import sys
 
 if __name__ == "__main__":
 
     h = "localhost"
     p = 3306
-    u = "root"
-    mdp = ""
-    bdd = "hbtn_0e_0_usa"
+    u = sys.argv[1]
+    mdp = sys.argv[2]
+    bdd = sys.argv[3]
 
     con = MySQLdb.connect(host=h, port=p, user=u, password=mdp, database=bdd)
     cur = con.cursor()
@@ -19,6 +20,6 @@ if __name__ == "__main__":
 
     for _ in result:
         print(_)
-    cur.close()
 
+    cur.close()
     con.close()
