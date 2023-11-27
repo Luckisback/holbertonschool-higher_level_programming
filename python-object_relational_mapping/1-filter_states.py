@@ -16,12 +16,13 @@ if __name__ == "__main__":
     con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
     cur = con.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+    cur.execute("SELECT * FROM states")
 
     result = cur.fetchall()
 
-    for _ in result:
-        print(_)
+    for eta in result:
+        if sta[1][0] == "N":
+            print(eta)
 
     cur.close()
     con.close()
