@@ -1,26 +1,32 @@
 #!/usr/bin/python3
-""" A script that lists all states from the database 'hbtn_0e_0_usa'
-"""
+
+""" A script that lists all states from database """
 
 import MySQLdb
-import sys
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    connection = MySQLdb.connect(user=username, passwd=password,
-                                 db=database, host="localhost",
-                                 port=3306)
 
-    cursor = connection.cursor()
-    request = "SELECT * FROM states ORDER BY states.id"
-    cursor.execute(request)
+    """ Delaration of connection's parameters """
+    h = "localhost"
+    u = "root"
+    pwd = ""
+    db = "hbtn_0e_0_usa"
+    p = 3306
 
-    stateList = cursor.fetchall()
+    """connection to the dabtabase """
+    con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
+    cur = con.cursor()
 
-    for state in stateList:
-        print(state)
+    """ The query for retieving information from the table """
+    cur.execute("SELECT * FROM states ORDER BY states.id")
 
-    cursor.close()
-    connection.close()
+    """ Information recovery """
+    result = cur.fetchall()
+
+    """ listing information"""
+    for _ in result:
+        print(_)
+
+    """ Closing the connection """
+    cur.close()
+    con.close()
