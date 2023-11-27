@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import MySQLdb
+import sys
 
 """ A script that lists all states with a name starting with upper 'N'  """
 
@@ -9,9 +10,9 @@ if __name__ == "__main__":
     """ Declaration of connection's parameters """
     h = "localhost"
     p = 3306
-    u = "root"
-    pwd = ""
-    db = "hbtn_0e_0_usa"
+    u = argv[1]
+    pwd = argv[2]
+    db = argv[3]
 
     """ Connection to the database """
     con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
