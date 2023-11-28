@@ -11,14 +11,17 @@ if __name__ == "__main__":
     """ Declaration of connextion's parameters """
     h ="localhost"
     p = 3306
-    u = "root"
-    mps = ""
-    dtb = "hbtn_0e_0_usa"
+    u = argv[1]
+    mps = argv[2]
+    dtb = arg[3]
+    nom_stat = argv[4]
 
     """ Connection to the data base """
     con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
     cur = con.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id")
+    qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
+    cur = (qry, nom_stat)
+
     res = cur.fetchall()
 
     """ Comparaison and displaying matched values """
