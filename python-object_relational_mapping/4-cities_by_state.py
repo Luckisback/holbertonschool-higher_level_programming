@@ -3,15 +3,16 @@
 """ A script that lists all cities from the database """
 
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
 
     """ Declaration of connection's parameters """
     h = "localhost"
     p = 3306
-    u = "root"
-    mdp = ""
-    bdd = "hbtn_0e_4_usa"
+    u = argv[1]
+    mdp = argv[2]
+    bdd = argv[3]
 
     """ Connection to the database """
     con = MySQLdb.connect(host=h, port=p, user=u, password=mdp, database=bdd)
