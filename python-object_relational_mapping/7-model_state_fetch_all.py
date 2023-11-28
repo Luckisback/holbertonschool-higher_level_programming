@@ -16,8 +16,8 @@ if __name__ == "__main__":
 
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(u, p, bdd))
 
-    result = engine.execute(text("SELECT * FROM states;"))
-    result.fetchall()
+    qry = engine.execute(text("SELECT * FROM states;"))
+    result = qry.fetchall()
 
     for row in result:
         print("{}: {}".format(row[0], row[1]))
