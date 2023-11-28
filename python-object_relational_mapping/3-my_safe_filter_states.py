@@ -14,20 +14,19 @@ if __name__ == "__main__":
     u = argv[1]
     mps = argv[2]
     dtb = arg[3]
-    nom_stat = argv[4]
+    nom_stat = argv[len(argv) -1]
 
     """ Connection to the data base """
     con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
     cur = con.cursor()
     qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
-    cur = (qry, (nom_stat,))
+    cur = (qry, nom_stat)
 
     res = cur.fetchall()
 
     """ Comparaison and displaying matched values """
-    index_val = len(argv) -1
     for _ in res:
-        if _[1] == argv[index_val]:
+        if _[1] == argv[nom_stat]:
             print(_)
 
     """ Closing the connection """
