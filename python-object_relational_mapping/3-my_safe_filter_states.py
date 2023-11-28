@@ -20,7 +20,7 @@ if __name__ == "__main__":
     con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
     cur = con.cursor()
     qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
-    cur = (qry, nom_stat)
+    cur = (qry, (nom_stat,))
 
     res = cur.fetchall()
 
