@@ -8,7 +8,6 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    """ Declaration of connextion's parameters """
     h ="localhost"
     p = 3306
     u = argv[1]
@@ -16,7 +15,6 @@ if __name__ == "__main__":
     dtb = arg[3]
     nom_stat = argv[len(argv) -1]
 
-    """ Connection to the data base """
     con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
     cur = con.cursor()
     qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
@@ -24,11 +22,9 @@ if __name__ == "__main__":
 
     res = cur.fetchall()
 
-    """ Comparaison and displaying matched values """
     for _ in res:
         if _[1] == argv[nom_stat]:
             print(_)
 
-    """ Closing the connection """
     cur.close()
     con.close()
