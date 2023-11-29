@@ -8,11 +8,11 @@ from sys import argv
 if __name__ == "__main__":
 
     """ Declaration for connction to the database """
-    h="localhost"
-    p=3306
-    u=sys.argv[1]
-    pwd=argv[2]
-    db=argv[3]
+    h = "localhost"
+    p = 3306
+    u = argv[1]
+    pwd = argv[2]
+    db = argv[3]
 
     """ Connection to the database """
     con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
