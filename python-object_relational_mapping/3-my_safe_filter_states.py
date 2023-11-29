@@ -15,7 +15,8 @@ if __name__ == "__main__":
     dtb = arg[3]
     nom_stat = argv[len(argv) -1]
 
-    con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
+    con_val = "port = %s, database = %s, user = %s, host = %s, password = %s" % (h, p, u, mps, dtb)
+    con = MySQL.connect(con_val)
     cur = con.cursor()
     qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
     cur = (qry, nom_stat)
