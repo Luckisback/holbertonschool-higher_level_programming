@@ -8,15 +8,16 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    h ="localhost"
+    h = "localhost"
     p = 3306
     u = argv[1]
     mps = argv[2]
-    dtb = arg[3]
-    nom_stat = argv[len(argv) -1]
+    dtb = argv[3]
+    nom_stat = argv[len(argv) - 1]
 
-    con_val = "port = %s, database = %s, user = %s, host = %s, password = %s" % (h, p, u, mps, dtb)
-    con = MySQL.connect(con_val)
+    con_val = """port = %s, database = %s, user = %s,
+    host = %s, password = %s""" % (h, p, u, mps, dtb)
+    con = MySQLdb.connect(con_val)
     cur = con.cursor()
     qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
     cur = (qry, nom_stat)
