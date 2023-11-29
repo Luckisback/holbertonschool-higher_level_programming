@@ -19,13 +19,13 @@ if __name__ == "__main__":
     host = %s, password = %s""" % (h, p, u, mps, dtb)
     con = MySQLdb.connect(con_val)
     cur = con.cursor()
-    qry = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
-    cur = (qry, nom_stat)
+    qry = "SELECT * FROM states ORDER BY states.id"
+    cur.execute(qry)
 
     res = cur.fetchall()
 
     for _ in res:
-        if _[1] == argv[nom_stat]:
+        if _[1] == nom_stat:
             print(_)
 
     cur.close()
