@@ -15,13 +15,13 @@ if __name__ == "__main__":
     dtb = argv[3]
     nom_stat = argv[4]
 
-    param_con = "port = '%s',\
-        database = '%s', user= '%s',\
-            host = '%s', password = '%s'" % (p, dtb, u, h, mps)
+    param_con = "port = '{}',\
+        database = '{}', user= '{}',\
+            host = '{}', password = '{}'".format(p, dtb, u, h, mps)
     con = MySQLdb.connect(param_con)
     cur = con.cursor()
     q = "SELECT * FROM states WHERE name = '{}'\
-    AND name LIKE BINARY 'N%' ORDER BY states.id"
+    AND name LIKE BINARY 'N%' ORDER BY states.id".format(nom_stat)
     cur.execute(q)
 
     res = cur.fetchall()
