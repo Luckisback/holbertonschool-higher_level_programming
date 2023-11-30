@@ -15,13 +15,13 @@ if __name__ == "__main__":
                           user=u, password=pwd, database=db)
 
     cur = con.cursor()
-    req = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
+    req = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id"
     cur.execute(req)
 
     res_tup = cur.fetchall()
 
     for eta in res_tup:
-        print("{}".format(eta))
+        print(eta)
 
     cur.close()
     con.close()
