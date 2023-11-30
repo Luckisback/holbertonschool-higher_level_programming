@@ -14,8 +14,9 @@ if __name__ == "__main__":
     bdd = argv[3]
 
     """ Connection to the database """
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(u, p, bdd))
-
+    engine = create_engine("mysql+mysqldb://{}:{}\
+                           @localhost:3306/{}".format(u, p, bdd))
+    """Executing a request"""
     qry = engine.execute(text("SELECT * FROM states"))
 
     result = qry.fetchall()
