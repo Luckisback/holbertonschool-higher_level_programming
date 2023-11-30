@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     con = MySQLdb.connect(host=h, port=p, user=u, password=mps, database=dtb)
     cur = con.cursor()
-    q = "SELECT * FROM states WHERE name = BINARY '{}'\
-        ORDER BY states.id".format(nom_stat)
+    q = "SELECT * FROM states WHERE name = BINARY %s\
+        ORDER BY states.id" % (nom_stat)
     cur.execute(q)
 
     res = cur.fetchall()
