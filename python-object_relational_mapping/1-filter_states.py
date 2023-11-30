@@ -21,7 +21,7 @@ if __name__ == "__main__":
     res_tup = cur.fetchall()
 
     for eta in res_tup:
-        print(eta)
+        print("{}".format(eta))
 
     cur.close()
     con.close()
