@@ -19,7 +19,7 @@ if __name__ == "__main__":
     con = MySQLdb.connect(param_con)
     cur = con.cursor()
     q = "SELECT * FROM states WHERE name = '{}'\
-    AND name LIKE BINARY 'N%' ORDER BY states.id".format(nom_stat,)
+        ORDER BY states.id".format(nom_stat,)
     cur.execute(q)
 
     res = cur.fetchall()
