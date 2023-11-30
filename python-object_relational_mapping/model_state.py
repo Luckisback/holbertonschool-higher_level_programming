@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class Cities(Base):
+class States(Base):
     """ Creation of the table States in the database hbtn_0e_6_usa """
 
     __tablename__='States'
