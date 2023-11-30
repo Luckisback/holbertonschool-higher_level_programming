@@ -13,12 +13,12 @@ if __name__ == "__main__":
     u = argv[1]
     mps = argv[2]
     dtb = argv[3]
-    nom_stat = argv[len(argv) - 1]
+    nom_stat = argv[4]
 
     con_val = "port = p, database = dtb, user = u, host = h, password = mps"
     con = MySQLdb.connect(con_val)
     cur = con.cursor()
-    qry = "SELECT * FROM states ORDER BY states.id"
+    qry = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id"
     cur.execute(qry)
 
     res = cur.fetchall()
