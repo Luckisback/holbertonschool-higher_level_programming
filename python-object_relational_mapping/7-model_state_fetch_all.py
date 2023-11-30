@@ -16,10 +16,12 @@ if __name__ == "__main__":
     """ Connection to the database """
     engine = create_engine("mysql+mysqldb://{}:{}\
                            @localhost:3306/{}".format(u, p, bdd))
-    """Executing a request"""
-    qry = engine.execute(text("SELECT * FROM states"))
 
-    result = qry.fetchall()
+    """ Creating session to interact with the database """
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for row in result:
-        print("{}: {}".format(row[0], row[1]))
+    """ Displaying all stats """
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
+    session.close()
