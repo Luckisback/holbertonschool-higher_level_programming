@@ -18,7 +18,7 @@ if __name__ == "__main__":
     con = MySQLdb.connect(host=h, port=p, user=u, password=mps, database=dtb)
     cur = con.cursor()
     q = "SELECT * FROM states WHERE name = '{}'\
-        ORDER BY states.id".format(nom_stat,)
+        ORDER BY states.id".format(nom_stat)
     cur.execute(q)
 
     res = cur.fetchall()
