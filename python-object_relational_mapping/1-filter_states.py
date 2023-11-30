@@ -11,7 +11,8 @@ if __name__ == "__main__":
     pwd = sys.argv[2]
     db = sys.argv[3]
 
-    con = MySQLdb.connect(host="localhost",port=3306, user=u, password=pwd, database=db)
+    con = MySQLdb.connect(host="localhost", port=3306,
+                          user=u, password=pwd, database=db)
 
     cur = con.cursor()
     req = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
