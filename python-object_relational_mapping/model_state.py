@@ -16,8 +16,6 @@ class States(Base):
 
     id = Column(Integer,
                 primary_key=True,
-                unique=True,
-                nullable=False,
-                autoincrement=True)
+                nullable=False)
 
     name = Column(String(128), nullable=False)
