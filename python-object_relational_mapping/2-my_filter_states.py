@@ -22,14 +22,12 @@ if __name__ == "__main__":
                           database=db)
     cur = con.cursor()
     Qry = "SELECT * FROM states\
-        WHERE name = BINARY %s ORDER BY states.id" % (nom_stat)
+        WHERE name = BINARY %s ORDER BY states.id".format(nom_stat)
     cur.execute(Qry)
     q_result = cur.fetchall()
 
-    """ Searshing for a matched value """
     for _ in q_result:
         print(_)
 
-    """ Closing the connexion """
     cur.close()
     con.close()
