@@ -13,18 +13,22 @@ if __name__ == "__main__":
     u = argv[1]
     pwd = argv[2]
     db = argv[3]
+    nom_stat = argv[len(argv) - 1]
 
     """ Connection to the database """
-    con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
+    con = MySQLdb.connect(host=h,
+                          port=p, user=u,
+                          password=pwd,
+                          database=db)
     cur = con.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id")
+    Qry = "SELECT * FROM states\
+        WHERE name = BINARY nom_stat ORDER BY states.id"
+    cur.execute(Qry)
     q_result = cur.fetchall()
 
     """ Searshing for a matched value """
-    index_arg = len(argv) - 1
     for _ in q_result:
-        if _[1] == argv[index_arg]:
-            print(_)
+        print(_)
 
     """ Closing the connexion """
     cur.close()
