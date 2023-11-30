@@ -15,7 +15,10 @@ if __name__ == "__main__":
     dtb = argv[3]
     nom_stat = argv[4]
 
-    con = MySQLdb.connect(port=p, database=dtb, user=u, host=h, password=mps)
+    param_con = "port = '%s',\
+        database = '%s', user= '%s',\
+            host = '%s', password = '%s'" % (p, dtb, u, h, mps)
+    con = MySQLdb.connect(param_con)
     cur = con.cursor()
     q = "SELECT * FROM states WHERE name = '{}'\
     AND name LIKE BINARY 'N%' ORDER BY states.id"
