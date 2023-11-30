@@ -22,7 +22,7 @@ if __name__ == "__main__":
                           database=db)
     cur = con.cursor()
     Qry = "SELECT * FROM states\
-        WHERE name = BINARY nom_stat ORDER BY states.id"
+        WHERE name = BINARY %s ORDER BY states.id" % (nom_stat)
     cur.execute(Qry)
     q_result = cur.fetchall()
 
