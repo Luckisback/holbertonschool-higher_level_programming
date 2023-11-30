@@ -12,15 +12,12 @@ if __name__ == "__main__":
     u = argv[1]
     pwd = argv[2]
     db = argv[3]
-    nom_stat = argv[len(argv) - 1]
+    nom_stat = argv[4]
 
-    con = MySQLdb.connect(host=h,
-                          port=p, user=u,
-                          password=pwd,
-                          database=db)
+    con = MySQLdb.connect(host=h, port=p, user=u, password=pwd, database=db)
     cur = con.cursor()
     Qry = "SELECT * FROM states\
-        WHERE name = BINARY {} ORDER BY states.id".format(nom_stat)
+        WHERE name = BINARY '{}' ORDER BY states.id".format(nom_stat)
     cur.execute(Qry)
     q_result = cur.fetchall()
 
