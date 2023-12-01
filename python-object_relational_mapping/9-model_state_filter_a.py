@@ -13,19 +13,24 @@ if __name__ == "__main__":
     pw = sys.argv[2]
     db = sys.argv[3]
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(us, pw, db))
+    engine = create_engine("mysql+mysqldb://{}:{}\
+        @localhost:3306/{}".format(us, pw, db), pool_pre_ping=True)
 
+    """ creating session to interact with database """
     Session = sessionmaker(bind=engine)
     session = Session()
+    """ retrieve the first state"""
     state = session.query(State).order_by(State.id).first()
 
-    if state is None:
-        print("Nothing")
-    else:
+    if state:
         print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
+    session.close()
 
     """
-    qry = engine.execute(text("SELECT * FROM states ORDER BY states.id LIMIT 1;"))
+    qry = engine.execute
+    (text("SELECT * FROM states ORDER BY states.id LIMIT 1;"))
     result =qry.fetchall()
 
     for row in result:
