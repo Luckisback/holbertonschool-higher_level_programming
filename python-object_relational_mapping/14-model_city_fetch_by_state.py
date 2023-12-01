@@ -18,13 +18,10 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
                            .format(us, paw, dtb), pool_pre_ping=True)
 
+    """ creating session to interact with database """
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    for s, c in session.query(State, City)\
-        .filter(State.id == City.state_id)\
-            .order_by(City.id):
-
-        print("{}: ({}) {}".format(s.name, c.id, c.name))
-
+    """ change name of id = 2 """
+    session.query(State).filter(State.id == 2).update({"name": "New Mexico"})
+    session.commit()
     session.close()
