@@ -3,17 +3,18 @@
 """ A script that deletes all State objects with a name containing the letter 'a' """
 
 from model_state import Base, State
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 if __name__ == "__main__":
 
-    u = sys.argv[1]
-    pwd = sys.argv[2]
-    dtb = sys.argv[3]
+    u = argv[1]
+    pwd = argv[2]
+    dtb = argv[3]
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(u, pwd, dtb))
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+                           .format(u, pwd, dtb))
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -23,3 +24,4 @@ if __name__ == "__main__":
         session.delete(state)
 
     session.commit()
+    session.close()
