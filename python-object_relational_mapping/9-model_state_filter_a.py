@@ -20,10 +20,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     """ retrieve the first state"""
-    qy = session.query(State).filter\
-        (State.name.like('%a%')).order_by(State.id)
+    q = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
 
     """ display the result """
-    for state in qy:
+    for state in q:
         print("{}: {}".format(state.id, state.name))
     session.close()
