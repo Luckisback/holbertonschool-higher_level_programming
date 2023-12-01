@@ -21,7 +21,11 @@ if __name__ == "__main__":
     """ creating session to interact with database """
     Session = sessionmaker(bind=engine)
     session = Session()
-    """ change name of id = 2 """
-    session.query(State).filter(State.id == 2).update({"name": "New Mexico"})
-    session.commit()
+
+    """ query """
+    result_qy = session.query(City, State).filter(City.state_id == State.id)
+
+    """ display all cities"""
+    for city, state in result_qy:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
