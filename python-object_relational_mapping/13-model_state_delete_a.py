@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-""" A script that deletes all State objects with a name containing the letter 'a' """
+""" A script that deletes all State
+objects with a name containing the letter 'a' """
 
 from model_state import Base, State
 from sqlalchemy import create_engine
