@@ -13,7 +13,8 @@ if __name__ == "__main__":
     p = argv[2]
     bdd = argv[3]
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(u, p, bdd))
+    engine = create_engine("mysql+mysqldb://{}:{}\
+        @localhost:3306/{}".format(u, p, bdd))
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -25,7 +26,8 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
 
 """
-    qry = engine.execute(text("SELECT * FROM states ORDER BY states.id LIMIT 1;"))
+    qry = engine.execute
+    (text("SELECT * FROM states ORDER BY states.id LIMIT 1;"))
     result = qry.fetchall()
     for row in result:
         print("{}: {}".format(row[0], row[1]))
